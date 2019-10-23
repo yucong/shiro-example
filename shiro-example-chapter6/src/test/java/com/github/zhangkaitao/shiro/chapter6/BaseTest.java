@@ -1,6 +1,9 @@
 package com.github.zhangkaitao.shiro.chapter6;
 
 import com.github.zhangkaitao.shiro.chapter6.service.*;
+import com.github.zhangkaitao.shiro.chapter6.service.impl.PermissionServiceImpl;
+import com.github.zhangkaitao.shiro.chapter6.service.impl.RoleServiceImpl;
+import com.github.zhangkaitao.shiro.chapter6.service.impl.UserServiceImpl;
 import com.github.zhangkaitao.shiro.chapter6.entity.Permission;
 import com.github.zhangkaitao.shiro.chapter6.entity.Role;
 import com.github.zhangkaitao.shiro.chapter6.entity.User;

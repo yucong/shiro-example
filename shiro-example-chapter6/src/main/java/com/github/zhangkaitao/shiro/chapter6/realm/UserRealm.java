@@ -1,7 +1,7 @@
 package com.github.zhangkaitao.shiro.chapter6.realm;
 
 import com.github.zhangkaitao.shiro.chapter6.service.UserService;
-import com.github.zhangkaitao.shiro.chapter6.service.UserServiceImpl;
+import com.github.zhangkaitao.shiro.chapter6.service.impl.UserServiceImpl;
 import com.github.zhangkaitao.shiro.chapter6.entity.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
