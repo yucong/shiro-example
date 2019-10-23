@@ -32,6 +32,8 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String base64Encoded = Base64.encodeToString(str.getBytes());
         String str2 = Base64.decodeToString(base64Encoded);
+        // aGVsbG8=
+        System.out.println(base64Encoded);
         Assert.assertEquals(str, str2);
 
     }
@@ -41,6 +43,8 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String base64Encoded = Hex.encodeToString(str.getBytes());
         String str2 = new String(Hex.decode(base64Encoded.getBytes()));
+        // 68656c6c6f
+        System.out.println(base64Encoded);
         Assert.assertEquals(str, str2);
 
     }
@@ -50,6 +54,7 @@ public class CodecAndCryptoTest {
         String str = "hello";
         byte[] bytes = CodecSupport.toBytes(str, "utf-8");
         String str2 = CodecSupport.toString(bytes, "utf-8");
+        System.out.println(str2);
         Assert.assertEquals(str, str2);
     }
 
@@ -69,9 +74,8 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String salt = "123";
         String md5 = new Md5Hash(str, salt).toString();//还可以转换为 toBase64()/toHex()
+        // 86fcb4c0551ea48ede7df5ed9626eee7
         System.out.println(md5);
-
-
     }
 
     @Test
@@ -79,17 +83,18 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String salt = "123";
         String sha1 = new Sha1Hash(str, salt).toString();
+        // f0a139408f7b134c66342e3d1cf4870a293c11c3
         System.out.println(sha1);
 
     }
 
     @Test
-       public void testSha256() {
+    public void testSha256() {
         String str = "hello";
         String salt = "123";
         String sha1 = new Sha256Hash(str, salt).toString();
+        // 7dfe54ea69b2d07a597952e49374a1aebf3c10689444a83f0a084761c8a1c626
         System.out.println(sha1);
-
     }
 
     @Test
@@ -97,6 +102,7 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String salt = "123";
         String sha1 = new Sha384Hash(str, salt).toString();
+        // b18fad48be86ede658ae8b850137757d630772726f7ed70c2439cf42d536d9d20c0f377b546c49639586217b72c41077
         System.out.println(sha1);
 
     }
@@ -106,6 +112,7 @@ public class CodecAndCryptoTest {
         String str = "hello";
         String salt = "123";
         String sha1 = new Sha512Hash(str, salt).toString();
+        //8150172b303ad08d821c81576c2f2e0948230a7cb250e273ecce88051982cc6fc01824f468c774c7c57d20548585ccc9e1e25f6b01c6a56e9a07dd64bb745465
         System.out.println(sha1);
 
     }
@@ -116,6 +123,7 @@ public class CodecAndCryptoTest {
         String salt = "123";
         //MessageDigest
         String simpleHash = new SimpleHash("SHA-1", str, salt).toString();
+        // f0a139408f7b134c66342e3d1cf4870a293c11c3
         System.out.println(simpleHash);
 
     }
@@ -135,6 +143,7 @@ public class CodecAndCryptoTest {
                 .setAlgorithmName("MD5").setSource(ByteSource.Util.bytes("hello"))
                 .setSalt(ByteSource.Util.bytes("123")).setIterations(2).build();
         String hex = hashService.computeHash(request).toHex();
+        // fd2b413d4f8c465db16d51ce3e8dc18e
         System.out.println(hex);
     }
 
@@ -153,7 +162,7 @@ public class CodecAndCryptoTest {
         String encrptText = aesCipherService.encrypt(text.getBytes(), key.getEncoded()).toHex();
         //解密
         String text2 = new String(aesCipherService.decrypt(Hex.decode(encrptText), key.getEncoded()).getBytes());
-
+        System.out.println(encrptText);
         Assert.assertEquals(text, text2);
     }
 
@@ -171,7 +180,7 @@ public class CodecAndCryptoTest {
         String encrptText = blowfishCipherService.encrypt(text.getBytes(), key.getEncoded()).toHex();
         //解密
         String text2 = new String(blowfishCipherService.decrypt(Hex.decode(encrptText), key.getEncoded()).getBytes());
-
+        System.out.println(encrptText);
         Assert.assertEquals(text, text2);
     }
 
@@ -192,7 +201,7 @@ public class CodecAndCryptoTest {
         String encrptText = cipherService.encrypt(text.getBytes(), key.getEncoded()).toHex();
         //解密
         String text2 = new String(cipherService.decrypt(Hex.decode(encrptText), key.getEncoded()).getBytes());
-
+        System.out.println(encrptText);
         Assert.assertEquals(text, text2);
     }
 
