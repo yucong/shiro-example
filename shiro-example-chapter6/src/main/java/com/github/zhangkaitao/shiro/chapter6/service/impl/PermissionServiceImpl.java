@@ -1,7 +1,7 @@
 package com.github.zhangkaitao.shiro.chapter6.service.impl;
 
 import com.github.zhangkaitao.shiro.chapter6.dao.PermissionDao;
-import com.github.zhangkaitao.shiro.chapter6.dao.PermissionDaoImpl;
+import com.github.zhangkaitao.shiro.chapter6.dao.impl.PermissionDaoImpl;
 import com.github.zhangkaitao.shiro.chapter6.entity.Permission;
 import com.github.zhangkaitao.shiro.chapter6.service.PermissionService;
 

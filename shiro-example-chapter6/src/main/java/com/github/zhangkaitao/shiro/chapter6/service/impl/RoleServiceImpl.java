@@ -1,7 +1,7 @@
 package com.github.zhangkaitao.shiro.chapter6.service.impl;
 
 import com.github.zhangkaitao.shiro.chapter6.dao.RoleDao;
-import com.github.zhangkaitao.shiro.chapter6.dao.RoleDaoImpl;
+import com.github.zhangkaitao.shiro.chapter6.dao.impl.RoleDaoImpl;
 import com.github.zhangkaitao.shiro.chapter6.entity.Role;
 import com.github.zhangkaitao.shiro.chapter6.service.RoleService;
 

@@ -1,7 +1,7 @@
 package com.github.zhangkaitao.shiro.chapter6.service.impl;
 
 import com.github.zhangkaitao.shiro.chapter6.dao.UserDao;
-import com.github.zhangkaitao.shiro.chapter6.dao.UserDaoImpl;
+import com.github.zhangkaitao.shiro.chapter6.dao.impl.UserDaoImpl;
 import com.github.zhangkaitao.shiro.chapter6.entity.User;
 import com.github.zhangkaitao.shiro.chapter6.service.PasswordHelper;
 import com.github.zhangkaitao.shiro.chapter6.service.UserService;
