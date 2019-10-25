@@ -30,15 +30,19 @@ public class UserRealmTest extends BaseTest {
     }
 
     @Test
-      public void testClearCachedAuthenticationInfo() {
-        login(u1.getUsername(), password);
-        userService.changePassword(u1.getId(), password + "1");
+    public void testClearCachedAuthenticationInfo() {
+        try {
+			login(u1.getUsername(), password);
+			userService.changePassword(u1.getId(), password + "1");
 
-        RealmSecurityManager securityManager = (RealmSecurityManager) SecurityUtils.getSecurityManager();
-        UserRealm userRealm = (UserRealm) securityManager.getRealms().iterator().next();
-        userRealm.clearCachedAuthenticationInfo(subject().getPrincipals());
+			RealmSecurityManager securityManager = (RealmSecurityManager) SecurityUtils.getSecurityManager();
+			UserRealm userRealm = (UserRealm) securityManager.getRealms().iterator().next();
+			userRealm.clearCachedAuthenticationInfo(subject().getPrincipals());
 
-        login(u1.getUsername(), password + "1");
+			login(u1.getUsername(), password + "1");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 
     }

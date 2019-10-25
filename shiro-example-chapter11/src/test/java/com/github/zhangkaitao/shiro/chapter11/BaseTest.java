@@ -5,6 +5,10 @@ import com.github.zhangkaitao.shiro.chapter11.entity.Permission;
 import com.github.zhangkaitao.shiro.chapter11.entity.Role;
 import com.github.zhangkaitao.shiro.chapter11.entity.User;
 import com.github.zhangkaitao.shiro.chapter11.service.*;
+import com.github.zhangkaitao.shiro.chapter11.service.impl.PermissionServiceImpl;
+import com.github.zhangkaitao.shiro.chapter11.service.impl.RoleServiceImpl;
+import com.github.zhangkaitao.shiro.chapter11.service.impl.UserServiceImpl;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.config.IniSecurityManagerFactory;
