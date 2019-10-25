@@ -41,11 +41,11 @@ public abstract class BaseTest {
 
     @Before
     public void setUp() {
-        JdbcTemplateUtils.jdbcTemplate().update("delete from sys_users");
-        JdbcTemplateUtils.jdbcTemplate().update("delete from sys_roles");
-        JdbcTemplateUtils.jdbcTemplate().update("delete from sys_permissions");
-        JdbcTemplateUtils.jdbcTemplate().update("delete from sys_users_roles");
-        JdbcTemplateUtils.jdbcTemplate().update("delete from sys_roles_permissions");
+        JdbcTemplateUtils.jdbcTemplate().update("truncate sys_users");
+        JdbcTemplateUtils.jdbcTemplate().update("truncate sys_roles");
+        JdbcTemplateUtils.jdbcTemplate().update("truncate sys_permissions");
+        JdbcTemplateUtils.jdbcTemplate().update("truncate sys_users_roles");
+        JdbcTemplateUtils.jdbcTemplate().update("truncate sys_roles_permissions");
 
 
         //1、新增权限

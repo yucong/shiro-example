@@ -38,10 +38,13 @@ public class LoginServlet extends HttpServlet {
         try {
             subject.login(token);
         } catch (UnknownAccountException e) {
+        	e.printStackTrace();
             error = "用户名/密码错误";
         } catch (IncorrectCredentialsException e) {
+        	e.printStackTrace();
             error = "用户名/密码错误";
         } catch (AuthenticationException e) {
+        	e.printStackTrace();
             //其他错误，比如锁定，如果想单独处理请单独catch处理
             error = "其他错误：" + e.getMessage();
         }
