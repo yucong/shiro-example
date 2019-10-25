@@ -64,11 +64,11 @@ public class ShiroTest {
     
     @Before
     public void setUp() {
-        jdbcTemplate.update("delete from sys_users");
-        jdbcTemplate.update("delete from sys_roles");
-        jdbcTemplate.update("delete from sys_permissions");
-        jdbcTemplate.update("delete from sys_users_roles");
-        jdbcTemplate.update("delete from sys_roles_permissions");
+        jdbcTemplate.update("truncate sys_users");
+        jdbcTemplate.update("truncate sys_roles");
+        jdbcTemplate.update("truncate sys_permissions");
+        jdbcTemplate.update("truncate sys_users_roles");
+        jdbcTemplate.update("truncate sys_roles_permissions");
 
 
         //1、新增权限
