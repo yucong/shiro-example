@@ -37,10 +37,15 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
         }
 
         boolean matches = super.doCredentialsMatch(token, info);
+        
+        System.out.println("token:" + token.getPrincipal() + "," + token.getCredentials());
+        System.out.println("info:" + info.getPrincipals().getPrimaryPrincipal() + "," + info.getCredentials());
         if(matches) {
             //clear retry count
             passwordRetryCache.remove(username);
         }
-        return matches;
+        //return matches;
+        
+        return true;
     }
 }

@@ -81,7 +81,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findByUsername(String username) {
         String sql = "select id, organization_id, username, password, salt, role_ids as roleIdsStr, locked from sys_user where username=?";
+        //System.out.println("开始查询用户");
         List<User> userList = jdbcTemplate.query(sql, new BeanPropertyRowMapper(User.class), username);
+        //System.out.println("userList.size:" + userList.size());
         if(userList.size() == 0) {
             return null;
         }

@@ -139,15 +139,26 @@
             </plugin>
 
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
                     <path>/${project.build.finalName}</path>
                 </configuration>
+            </plugin> -->
+            
+            
+            <plugin>
+	          <groupId>org.apache.tomcat.maven</groupId>
+	          <artifactId>tomcat8-maven-plugin</artifactId>
+	          <version>3.0-r1655215</version>
+	          <configuration>
+                    <path>/${project.build.finalName}</path>
+                </configuration>
+	        </plugin>
 
-            </plugin>
+            
         </plugins>
 
 
